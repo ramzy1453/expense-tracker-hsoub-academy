@@ -1,0 +1,43 @@
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.dashboard-body {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0 100px;
+}
+
+.dashboard__title {
+  text-align: center;
+}
+
+.dashboard__balance-container {
+  margin: 10px 0;
+}
+
+.dashboard__balance-title {
+}
+
+.dashboard__balance-price {
+}
+
+.dashboard__history-container {
+}
+
+.dashboard__history-title {
+  border-bottom: 1px solid #000;
+  width: fit-content;
+}
+
+.dashboard__transaction-container {
+}
+
+.dashboard__transaction-title {
+  border-bottom: 1px solid #000;
+  width: fit-content;
+}

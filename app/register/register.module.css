@@ -1,0 +1,108 @@
+.login-container {
+  display: flex;
+}
+
+.image-login {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  flex: 1;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.form-subtitle {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 0.7rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.8em;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+}
+
+.form-button {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 0.8em;
+  border: none;
+  outline: none;
+  background-color: #4dc591;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+.form-link {
+  margin-left: 0.5rem;
+}
+.form-button:hover {
+  background-color: #5be4a8;
+}
+
+@media screen and (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .image-login {
+    height: 50vh;
+  }
+
+  .form-container {
+    margin: 0;
+    padding: 1.5rem;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+  }
+
+  .form-subtitle {
+    font-size: 1rem;
+  }
+
+  .form-group input {
+    padding: 0.5rem;
+  }
+
+  .form-button {
+    font-size: 1rem;
+  }
+
+  .form-button:hover {
+    background-color: #5be4a8;
+  }
+}

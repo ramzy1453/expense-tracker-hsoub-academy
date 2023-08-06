@@ -1,0 +1,33 @@
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+.transaction-form > div {
+  margin-bottom: 1rem;
+}
+.transaction-form > div > .form-label {
+}
+
+.transaction-form > div > .form-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-top: 0.5rem;
+  font-family: "Poppins", sans-serif;
+}
+.transaction-form > button {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #2ecc71;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+.transaction-form > button:hover {
+  background-color: #27ae60;
+}

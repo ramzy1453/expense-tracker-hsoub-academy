@@ -1,0 +1,33 @@
+.income-expense__container {
+  display: flex;
+}
+
+.income-expense__child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 0 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.income-expense__child:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.price_income {
+  font-size: 1.2rem;
+  color: green;
+}
+
+.price_expense {
+  font-size: 1.2rem;
+  color: red;
+}

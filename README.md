@@ -10,5 +10,6 @@
 <ul>
 <li>تثبيت حزم جافاسكربت اللازمة <code>npm install</code></li>
 <li>تشغيل فيت لبناء الأصول اللازمة <code>npm run dev</code></li>
+<li>إضافة ملف <code>.env</code></li>
 </ul>
 </div>

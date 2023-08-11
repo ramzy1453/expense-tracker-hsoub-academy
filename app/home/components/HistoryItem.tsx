@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import classes from "../styles/history.module.css";
-import { Transaction } from "../types/transaction";
-import { deleteTransaction } from "../libs/requests";
-import { useAppContext } from "./AppContext";
+import { Transaction } from "../../types/transaction";
+import { deleteTransaction } from "../../libs/requests";
+import { useAppContext } from "../../AppContext";
 
 export default function HistoryItem(props: Transaction) {
   const globalState = useAppContext();

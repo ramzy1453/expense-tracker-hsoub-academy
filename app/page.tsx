@@ -1,60 +1,87 @@
 "use client";
+
 import React from "react";
-import classes from "./page.module.css";
-import IncomeExpense from "./components/IncomeExpense";
-import History from "./components/History";
-import AddTransaction from "./components/AddTransaction";
-import { useAppContext } from "./components/AppContext";
-import { getTransactions } from "./libs/requests";
-import { Transaction } from "./types/transaction";
+import classes from "./login.module.css";
+import cashImages from "./assets/cash.png";
+import hsoubLogo from "./assets/hsoub.png";
+import Image from "next/image";
+import { login } from "./libs/requests";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useAppContext } from "./AppContext";
 
-type Props = {};
-
-export default function DashboardPage(props: Props) {
+export default function LoginPage() {
+  const router = useRouter();
   const globalState = useAppContext();
-
-  const [loading, setLoading] = React.useState<boolean>(true);
-  const [error, setError] = React.useState<string>("");
-
-  React.useEffect(() => {
-    const fetchTransactions = async () => {
-      setLoading(true);
-      const response = await getTransactions(globalState?.auth?.token);
-      if (response?.message) {
-        setError(response.message);
-      }
-      globalState?.setTransactions(response);
-
-      setLoading(false);
-    };
-    fetchTransactions();
-  }, []);
-
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+  };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const response = await login(email, password);
+    if (response?.message) {
+      alert(response.message);
+    } else {
+      globalState?.authenticate({
+        user: response.user,
+        token: response.token,
+      });
+      router.push("/home");
+    }
+  };
   return (
-    <div className={classes["dashboard-layout"]}>
-      <h1 className={classes["dashboard__title"]}>
-        Expense Tracker - {globalState?.auth?.user.username}
-      </h1>
-      <div className={classes["dashboard-body"]}>
-        <div className={classes["dashboard__balance-container"]}>
-          <h2 className={classes["dashboard__balance-title"]}>YOUR BALANCE</h2>
-          <h1 className={classes["dashboard__balance-price"]}>
-            ${globalState?.transactions?.reduce((a, b) => a + b.amount, 0) || 0}
-          </h1>
-          <IncomeExpense />
+    <div className={classes["login-container"]}>
+      <div className={classes["image-login"]}>
+        <Image alt="Login Image" src={cashImages} />
+      </div>
+      <div className={classes["form-container"]}>
+        <div className={classes["image-container"]}>
+          <Image width={200} height={70} alt="Login Image" src={hsoubLogo} />
         </div>
-
-        <div className={classes["dashboard__history-container"]}>
-          <h3 className={classes["dashboard__history-title"]}>History</h3>
-          <History transactions={globalState?.transactions as Transaction[]} />
-        </div>
-
-        <div className={classes["dashboard__transaction-container"]}>
-          <h3 className={classes["dashboard__transaction-title"]}>
-            Add New Transaction
-          </h3>
-          <AddTransaction />
-        </div>
+        <h1 className={classes["form-title"]}>Hello Again !</h1>
+        <p className={classes["form-subtitle"]}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum vitae
+          nulla repudiandae porro dolore quae. Est architecto deleniti
+          perspiciatis dicta aliquam dolores explicabo
+        </p>
+        <form className={classes["form"]} onSubmit={handleSubmit}>
+          <div className={classes["form-group"]}>
+            <p className={classes["form-subtitle"]}>
+              Don't have an account ?
+              <Link href="/register" className={classes["form-link"]}>
+                Register
+              </Link>
+            </p>
+          </div>
+          <div className={classes["form-group"]}>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={handleEmailChange}
+            />
+          </div>
+          <div className={classes["form-group"]}>
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </div>
+          <div className={classes["form-group"]}>
+            <button type="submit" className={classes["form-button"]}>
+              Login
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

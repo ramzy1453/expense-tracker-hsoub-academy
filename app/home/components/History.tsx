@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "../styles/history.module.css";
 import HistoryItem from "./HistoryItem";
-import { Transaction } from "../types/transaction";
+import { Transaction } from "../../types/transaction";
 type Props = {
   transactions: Transaction[];
 };

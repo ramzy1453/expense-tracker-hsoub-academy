@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import classes from "../styles/add-transaction.module.css";
-import { createTransaction } from "../libs/requests";
-import { useAppContext } from "./AppContext";
+import { createTransaction } from "../../libs/requests";
+import { useAppContext } from "../../AppContext";
 
 type Props = {};
 

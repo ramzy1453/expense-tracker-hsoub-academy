@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "../styles/income-expense.module.css";
-import { useAppContext } from "./AppContext";
+import { useAppContext } from "../../AppContext";
 
 export default function IncomeExpense() {
   const globalState = useAppContext();

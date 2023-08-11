@@ -8,7 +8,7 @@ import Image from "next/image";
 import { register } from "../libs/requests";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useAppContext } from "../components/AppContext";
+import { useAppContext } from "../AppContext";
 
 export default function RegisterPage() {
   const router = useRouter();

@@ -1,8 +1,8 @@
 "use client";
 import { createContext, useState, useContext } from "react";
 import type { ReactNode } from "react";
-import { IAuth } from "../types/user";
-import { Transaction } from "../types/transaction";
+import { IAuth } from "./types/user";
+import { Transaction } from "./types/transaction";
 
 type Props = {
   children: ReactNode;

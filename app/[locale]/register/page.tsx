@@ -9,6 +9,7 @@ import { register } from "../libs/requests";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAppContext } from "../AppContext";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -17,6 +18,11 @@ export default function RegisterPage() {
   const [password, setPassword] = React.useState("");
   const [username, setUsername] = React.useState("");
   const [confirmPassword, setConfirmPassword] = React.useState("");
+  const locale = useLocale();
+  const t = useTranslations("Register");
+  console.log(locale, "chinois");
+  console.log(`${locale}/login`);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const response = await register(email, password, username, confirmPassword);
@@ -27,9 +33,11 @@ export default function RegisterPage() {
         user: response.user,
         token: response.token,
       });
-      router.push("/");
+      alert("Register Successfully");
+      router.push(`/${locale}/home`);
     }
   };
+
   return (
     <div className={classes["login-container"]}>
       <div className={classes["image-login"]}>
@@ -39,23 +47,19 @@ export default function RegisterPage() {
         <div className={classes["image-container"]}>
           <Image width={150} height={50} alt="Login Image" src={hsoubLogo} />
         </div>
-        <h1 className={classes["form-title"]}>Welcome !</h1>
-        <p className={classes["form-subtitle"]}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum vitae
-          nulla repudiandae porro dolore quae. Est architecto deleniti
-          perspiciatis dicta aliquam dolores explicabo
-        </p>
+        <h1 className={classes["form-title"]}>{t("title")}</h1>
+        <p className={classes["form-subtitle"]}>{t("description")} </p>
         <form className={classes["form"]} onSubmit={handleSubmit}>
           <div className={classes["form-group"]}>
             <p className={classes["form-subtitle"]}>
-              Already have an account ?
-              <Link href="/login" className={classes["form-link"]}>
-                Login
+              {t("alreadyHaveAccount")}
+              <Link href={`/${locale}`} className={classes["form-link"]}>
+                {t("login")}
               </Link>
             </p>
           </div>
           <div className={classes["form-group"]}>
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">{t("username")}</label>
             <input
               type="text"
               id="username"
@@ -64,7 +68,7 @@ export default function RegisterPage() {
             />
           </div>
           <div className={classes["form-group"]}>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">{t("email")}</label>
             <input
               type="email"
               id="email"
@@ -73,7 +77,7 @@ export default function RegisterPage() {
             />
           </div>
           <div className={classes["form-group"]}>
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">{t("password")}</label>
             <input
               type="password"
               id="password"
@@ -83,7 +87,7 @@ export default function RegisterPage() {
           </div>
 
           <div className={classes["form-group"]}>
-            <label htmlFor="password">Confirm Password</label>
+            <label htmlFor="password">{t("confirmPassword")}</label>
             <input
               type="password"
               id="confirmPassword"
@@ -93,7 +97,7 @@ export default function RegisterPage() {
           </div>
           <div className={classes["form-group"]}>
             <button type="submit" className={classes["form-button"]}>
-              Register
+              {t("register")}
             </button>
           </div>
         </form>

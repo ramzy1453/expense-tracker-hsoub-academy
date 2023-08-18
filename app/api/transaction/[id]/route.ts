@@ -9,6 +9,8 @@ interface Params {
 interface Body {
   amount: number;
   name: string;
+  startDate: Date;
+  endDate: Date;
 }
 export async function GET(
   request: NextRequest,
@@ -23,16 +25,21 @@ export async function GET(
   }
 }
 
-export async function PUT(
+export async function PATCH(
   request: NextRequest,
   { params }: { params: Params }
 ) {
   try {
     await connectDB();
-    const { name, amount }: Body = await request.json();
+    const { name, amount, startDate, endDate }: Body = await request.json();
     const transaction = await Transaction.findByIdAndUpdate(
       params.id,
-      { name, amount },
+      {
+        name,
+        amount,
+        startDate,
+        endDate,
+      },
       { new: true }
     );
     return NextResponse.json(transaction);

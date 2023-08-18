@@ -1,5 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
+import createMiddleware from "next-intl/middleware";
+
 import isAuthenticated from "./app/libs/isAuthenticated";
+
+export const config = {
+  matcher: ["/api/transaction/", "/((?!api|_next|.*\\..*).*)"],
+};
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -21,6 +27,7 @@ export async function middleware(request: NextRequest) {
   }
 }
 
-export const config = {
-  matcher: "/api/transaction/",
-};
+export default createMiddleware({
+  locales: ["en", "ar"],
+  defaultLocale: "en",
+});

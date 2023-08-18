@@ -5,7 +5,7 @@
 .history-item {
   border-bottom: 1px solid #0000001a;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 7px;
   margin: 10px 0;
   cursor: pointer;

@@ -41,3 +41,30 @@
   border-bottom: 1px solid #000;
   width: fit-content;
 }
+
+.dashboard__graph-link {
+  text-align: center;
+  background-color: #2ecc71;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 5px;
+}
+
+.nav {
+  padding: 10px;
+}
+
+.nav > select {
+  width: 100px;
+}
+
+.logout {
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 0 10px;
+  background-color: #e74c3c;
+  color: #fff;
+  border-radius: 5px;
+}

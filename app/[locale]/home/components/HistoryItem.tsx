@@ -21,8 +21,18 @@ export default function HistoryItem(props: Transaction) {
       }}
       className={classes["history-item"]}
     >
-      <div className={classes["history-item__text"]}>{props.name}</div>
-      <div className={classes["history-item__amount"]}>{props.amount}</div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <div className={classes["history-item__text"]}>{props.name}</div>
+        <div className={classes["history-item__amount"]}>{props.amount}</div>
+      </div>
+      <div className={classes["history-item__text"]}>
+        {String(new Date(props.startDate).toLocaleDateString())}
+      </div>
     </div>
   );
 }

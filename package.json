@@ -13,18 +13,21 @@
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
     "bcryptjs": "^2.4.3",
+    "chart.js": "^2.9.4",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "jose": "^4.14.4",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.2",
     "next": "13.4.12",
+    "next-intl": "^2.15.0-beta.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.1.6"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
+    "@types/chart.js": "^2.9.37",
     "@types/jsonwebtoken": "^9.0.2"
   }
 }

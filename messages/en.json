@@ -1,0 +1,43 @@
+{
+  "Login": {
+    "title": "Expense Tracker",
+    "description": "expense tracker is a tool designed to help individuals or businesses keep track of their financial transactions and expenditures. It allows users to record various expenses, such as purchases, bills, and other costs, in an organized and systematic manner.",
+    "register": "Register",
+    "dontHaveAccount": "Don't have an account?",
+    "email": "Email",
+    "password": "Password",
+    "login": "Login"
+  },
+  "Register": {
+    "title": "Expense Tracker",
+    "description": "Create a new account",
+    "alreadyHaveAccount": "Already have an account?",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "register": "Register"
+  },
+  "Home": {
+    "title": "Expense Tracker",
+    "visualizeBalance": "Visualize balance",
+    "yourBalance": "Your balance",
+    "income": "Income",
+    "expense": "Expense",
+    "history": "History",
+    "addNewTransaction": "Add New transaction",
+    "name": "Name",
+    "amount": "Amount",
+    "enterName": "Enter name...",
+    "enterAmount": "Enter amount...",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "addTransaction": "Add Transaction",
+    "noTransactionsYet": "No Transactions Yet"
+  },
+  "Graph": {
+    "title": "Amount Evolution",
+    "Amount": "Amount",
+    "noTransactionsYet": "No Transactions Yet"
+  }
+}

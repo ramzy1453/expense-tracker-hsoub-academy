@@ -5,6 +5,8 @@ import Transaction from "@/app/models/Transaction";
 interface Body {
   amount: number;
   name: string;
+  startDate: Date;
+  endDate: Date;
 }
 
 export async function GET(request: NextRequest) {
@@ -21,11 +23,17 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     await connectDB();
-    const { name, amount }: Body = await request.json();
+    const { name, amount, startDate, endDate }: Body = await request.json();
 
     const userId = request.cookies.get("userId")?.value;
 
-    const transaction = await Transaction.create({ name, amount, userId });
+    const transaction = await Transaction.create({
+      name,
+      amount,
+      startDate,
+      endDate,
+      userId,
+    });
 
     return NextResponse.json(transaction);
   } catch (error: any) {

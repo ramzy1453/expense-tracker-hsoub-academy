@@ -8,7 +8,7 @@ export default function useLocalStorage() {
   useEffect(() => {
     if (typeof window !== "undefined" && window.localStorage) {
       const jsonAuth = localStorage.getItem("auth");
-      const auth = JSON.parse(jsonAuth ? jsonAuth : "{}");
+      const auth = JSON.parse(jsonAuth || "{}");
       setAuth(auth);
     }
   }, []);

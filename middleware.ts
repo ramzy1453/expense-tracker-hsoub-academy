@@ -16,12 +16,8 @@ export async function middleware(request: NextRequest) {
       return NextResponse.next({ request });
     } else {
       return NextResponse.json(
-        {
-          message: "You are not authenticated",
-        },
-        {
-          status: 401,
-        }
+        { message: "You are not authenticated" },
+        { status: 401 }
       );
     }
   }

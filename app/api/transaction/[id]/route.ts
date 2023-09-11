@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 import connectDB from "@/app/libs/connectDB";
 import Transaction from "@/app/models/Transaction";
 
@@ -10,7 +11,6 @@ interface Body {
   amount: number;
   name: string;
   startDate: Date;
-  endDate: Date;
 }
 export async function GET(
   request: NextRequest,
@@ -31,14 +31,13 @@ export async function PATCH(
 ) {
   try {
     await connectDB();
-    const { name, amount, startDate, endDate }: Body = await request.json();
+    const { name, amount, startDate }: Body = await request.json();
     const transaction = await Transaction.findByIdAndUpdate(
       params.id,
       {
         name,
         amount,
         startDate,
-        endDate,
       },
       { new: true }
     );

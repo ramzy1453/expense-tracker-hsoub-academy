@@ -3,5 +3,4 @@ export interface Transaction {
   amount: number;
   name: string;
   startDate: Date;
-  endDate: Date;
 }

@@ -44,7 +44,7 @@ export default function LoginPage() {
       </div>
       <div className={classes["form-container"]}>
         <div className={classes["image-container"]}>
-          <Image width={200} height={70} alt="Login Image" src={hsoubLogo} />
+          <Image width={200} height={62} alt="Login Image" src={hsoubLogo} />
         </div>
         <h1 className={classes["form-title"]}>{t("title")}</h1>
         <p className={classes["form-subtitle"]}>{t("description")} </p>

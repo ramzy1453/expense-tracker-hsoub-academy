@@ -14,28 +14,21 @@ import { usePathname, useRouter } from "next/navigation";
 export default function HomePage() {
   const globalState = useAppContext();
 
-  const [loading, setLoading] = React.useState<boolean>(true);
-  const [error, setError] = React.useState<string>("");
-
   const t = useTranslations("Home");
   const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
 
   React.useEffect(() => {
     const fetchTransactions = async () => {
-      setLoading(true);
       const response = await getTransactions(globalState?.auth?.token);
       if (response?.message) {
-        setError(response.message);
       }
       globalState?.setTransactions(response);
-
-      setLoading(false);
     };
     fetchTransactions();
   }, []);
 
-  const router = useRouter();
-  const pathname = usePathname();
   const logout = () => {
     router.push(`/${locale}`);
   };
@@ -46,7 +39,7 @@ export default function HomePage() {
   return (
     <div className={classes["dashboard-layout"]}>
       <nav className={classes["nav"]}>
-        <select onChange={handleChangeLanguage}>
+        <select onChange={handleChangeLanguage} defaultValue={locale}>
           <option value="en">English</option>
           <option value="ar">Arabic</option>
         </select>
@@ -77,7 +70,9 @@ export default function HomePage() {
             {t("yourBalance")}
           </h2>
           <h1 className={classes["dashboard__balance-price"]}>
-            ${globalState?.transactions?.reduce((a, b) => a + b.amount, 0) || 0}
+            $
+            {globalState?.transactions?.reduce((acc, t) => acc + t.amount, 0) ||
+              0}
           </h1>
           <IncomeExpense />
         </div>

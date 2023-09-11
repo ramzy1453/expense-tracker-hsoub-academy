@@ -4,13 +4,12 @@ import connectDB from "@/app/libs/connectDB";
 import createToken from "@/app/libs/createToken";
 import { NextRequest, NextResponse } from "next/server";
 
-type Body = {
+interface Body {
   username: string;
   email: string;
   password: string;
   confirmationPassword?: string;
-};
-
+}
 export async function POST(request: NextRequest) {
   try {
     await connectDB();

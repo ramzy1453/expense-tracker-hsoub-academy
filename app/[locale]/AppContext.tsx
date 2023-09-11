@@ -28,7 +28,6 @@ const AppContext = createContext<AppContextType | undefined>({
 });
 
 export const AppProvider = ({ children }: Props) => {
-  // const [auth, setAuth] = useState<IAuth>();
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const { auth, setAuth, handleSaveStorage } = useLocalStorage();
   if (auth)

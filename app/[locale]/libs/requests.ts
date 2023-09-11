@@ -1,7 +1,6 @@
 import { Transaction } from "../types/transaction";
 import { IAuth } from "../types/user";
 
-const locale = "en";
 const BASE_URL = `http://localhost:3000/api/`;
 
 export async function login(
@@ -57,12 +56,11 @@ export const createTransaction = async (
   name: string,
   amount: number,
   startDate: Date,
-  endDate: Date,
   token?: string
 ): Promise<Transaction & { message?: string }> => {
   const response = await fetch(BASE_URL + "/transaction", {
     method: "POST",
-    body: JSON.stringify({ name, amount, startDate, endDate }),
+    body: JSON.stringify({ name, amount, startDate }),
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,

@@ -13,9 +13,6 @@ export default function AddTransaction() {
   const [startDate, setStartDate] = React.useState<string>(
     new Date().toISOString().split("T")[0]
   );
-  const [endDate, setEndDate] = React.useState<string>(
-    new Date().toISOString().split("T")[0]
-  );
 
   const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -26,17 +23,13 @@ export default function AddTransaction() {
   const handleChangeStartDate = (e: React.ChangeEvent<HTMLInputElement>) => {
     setStartDate(e.target.value);
   };
-  const handleChangeEndDate = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEndDate(e.target.value);
-  };
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const transaction = await createTransaction(
       name,
-      parseInt(amount),
+      parseFloat(amount),
       new Date(startDate),
-      new Date(endDate),
       globalState?.auth?.token
     );
     globalState?.addTransaction(transaction);
@@ -82,19 +75,7 @@ export default function AddTransaction() {
           className={classes["form-input"]}
         />
       </div>
-      <div>
-        <label htmlFor="amount" className={classes["form-label"]}>
-          {t("endDate")}
-        </label>
-        <input
-          value={endDate}
-          onChange={handleChangeEndDate}
-          type="date"
-          id="end-date"
-          className={classes["form-input"]}
-          min={startDate}
-        />
-      </div>
+
       <button>{t("addTransaction")}</button>
     </form>
   );

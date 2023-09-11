@@ -20,11 +20,13 @@ export default function RegisterPage() {
   const [confirmPassword, setConfirmPassword] = React.useState("");
   const locale = useLocale();
   const t = useTranslations("Register");
-  console.log(locale, "chinois");
-  console.log(`${locale}/login`);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (password !== confirmPassword) {
+      alert("Password and Confirm Password are not the same");
+      return;
+    }
     const response = await register(email, password, username, confirmPassword);
     if (response?.message) {
       alert(response.message);
@@ -45,7 +47,7 @@ export default function RegisterPage() {
       </div>
       <div className={classes["form-container"]}>
         <div className={classes["image-container"]}>
-          <Image width={150} height={50} alt="Login Image" src={hsoubLogo} />
+          <Image width={150} height={47} alt="Login Image" src={hsoubLogo} />
         </div>
         <h1 className={classes["form-title"]}>{t("title")}</h1>
         <p className={classes["form-subtitle"]}>{t("description")} </p>

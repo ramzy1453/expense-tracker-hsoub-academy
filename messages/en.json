@@ -31,7 +31,6 @@
     "enterName": "Enter name...",
     "enterAmount": "Enter amount...",
     "startDate": "Start Date",
-    "endDate": "End Date",
     "addTransaction": "Add Transaction",
     "noTransactionsYet": "No Transactions Yet"
   },
@@ -39,5 +38,9 @@
     "title": "Amount Evolution",
     "Amount": "Amount",
     "noTransactionsYet": "No Transactions Yet"
+  },
+  "Metadata": {
+    "title": "Expense Tracker",
+    "description": "Expense tracker is a tool designed to help track financial transactions"
   }
 }

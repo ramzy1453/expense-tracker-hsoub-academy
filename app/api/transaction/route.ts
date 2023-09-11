@@ -6,7 +6,6 @@ interface Body {
   amount: number;
   name: string;
   startDate: Date;
-  endDate: Date;
 }
 
 export async function GET(request: NextRequest) {
@@ -23,7 +22,7 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     await connectDB();
-    const { name, amount, startDate, endDate }: Body = await request.json();
+    const { name, amount, startDate }: Body = await request.json();
 
     const userId = request.cookies.get("userId")?.value;
 
@@ -31,7 +30,6 @@ export async function POST(request: NextRequest) {
       name,
       amount,
       startDate,
-      endDate,
       userId,
     });
 

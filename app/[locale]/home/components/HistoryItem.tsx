@@ -12,27 +12,32 @@ export default function HistoryItem(props: Transaction) {
     await deleteTransaction(props._id, globalState?.auth?.token);
   };
   return (
-    <div
-      title="Double click to delete"
-      onDoubleClick={deleteItem}
-      style={{
-        borderRight:
-          props.amount > 0 ? "5px solid #2ecc71" : "5px solid #c0392b",
-      }}
-      className={classes["history-item"]}
-    >
+    <div className={classes["main-container"]}>
       <div
+        onDoubleClick={deleteItem}
         style={{
-          display: "flex",
-          justifyContent: "space-between",
+          borderRight:
+            props.amount > 0 ? "5px solid #2ecc71" : "5px solid #c0392b",
         }}
+        className={classes["history-item"]}
       >
-        <div className={classes["history-item__text"]}>{props.name}</div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <div className={classes["history-item__text"]}>{props.name}</div>
+          <div className={classes["history-item__text"]}>
+            {String(new Date(props.startDate).toLocaleDateString())}
+          </div>
+        </div>
         <div className={classes["history-item__amount"]}>{props.amount}</div>
       </div>
-      <div className={classes["history-item__text"]}>
-        {String(new Date(props.startDate).toLocaleDateString())}
-      </div>
+      <button onClick={deleteItem} className={classes["delete-button"]}>
+        DELETE
+      </button>
     </div>
   );
 }

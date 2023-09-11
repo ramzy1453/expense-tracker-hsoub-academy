@@ -11,3 +11,10 @@ body {
   padding: 0;
   font-family: "Poppins", sans-serif;
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0;
+}

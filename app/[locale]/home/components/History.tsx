@@ -8,9 +8,9 @@ type Props = {
   transactions: Transaction[];
 };
 
-export default function History({ transactions }: Props) {
+export default function History(props: Props) {
   const t = useTranslations("Home");
-  const sortedTransactions = transactions.sort(
+  const sortedTransactions = props.transactions.sort(
     (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
   );
   return (

@@ -1,3 +1,23 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.delete-button {
+  background-color: #f44e54;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  outline: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #fe2c55;
+  transform: scale(0.98);
+}
+
 .history-container {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 10px;
@@ -5,7 +25,8 @@
 .history-item {
   border-bottom: 1px solid #0000001a;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   padding: 7px;
   margin: 10px 0;
   cursor: pointer;

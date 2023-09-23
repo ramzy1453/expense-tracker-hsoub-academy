@@ -26,6 +26,7 @@ export default function AddTransaction() {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (name === "" || amount === "" || startDate === "") return;
     const transaction = await createTransaction(
       name,
       parseFloat(amount),

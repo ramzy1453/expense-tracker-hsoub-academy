@@ -39,7 +39,9 @@ export default async function RootLayout({
           <AppProvider>
             <>
               {children}
-              <footer>2023 © Copyright Hsoub Academy</footer>
+              <footer>
+                {new Date().getFullYear()} © Copyright Hsoub Academy
+              </footer>
             </>
           </AppProvider>
         </NextIntlClientProvider>

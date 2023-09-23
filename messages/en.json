@@ -32,7 +32,8 @@
     "enterAmount": "Enter amount...",
     "startDate": "Start Date",
     "addTransaction": "Add Transaction",
-    "noTransactionsYet": "No Transactions Yet"
+    "noTransactionsYet": "No Transactions Yet",
+    "logout": "Logout"
   },
   "Graph": {
     "title": "Amount Evolution",

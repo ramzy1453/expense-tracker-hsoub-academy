@@ -61,10 +61,15 @@
 }
 
 .logout {
-  cursor: pointer;
-  padding: 5px 10px;
-  margin: 0 10px;
   background-color: #e74c3c;
+  text-align: center;
+  cursor: pointer;
   color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  margin: 0 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 5px;
+  outline: none;
+  border: none;
 }

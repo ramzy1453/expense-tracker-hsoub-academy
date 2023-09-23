@@ -13,10 +13,6 @@
   border-radius: 10px;
   transition: all 0.3s ease;
 }
-.income-expense__child:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-}
 
 .title {
   font-size: 1.5rem;

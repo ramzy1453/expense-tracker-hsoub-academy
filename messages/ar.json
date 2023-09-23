@@ -33,7 +33,8 @@
     "enterAmount": "أدخل المبلغ...",
     "startDate": "تاريخ البداية",
     "addTransaction": "إضافة معاملة",
-    "noTransactionsYet": "لا توجد معاملات بعد"
+    "noTransactionsYet": "لا توجد معاملات بعد",
+    "logout": "الخروج"
   },
   "Graph": {
     "title": "تطور المبلغ",

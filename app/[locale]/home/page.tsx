@@ -44,7 +44,7 @@ export default function HomePage() {
           <option value="ar">Arabic</option>
         </select>
         <button onClick={logout} className={classes["logout"]}>
-          Logout
+          {t("logout")}
         </button>
       </nav>
       <h1 className={classes["dashboard__title"]}>
@@ -77,18 +77,20 @@ export default function HomePage() {
           <IncomeExpense />
         </div>
 
-        <div className={classes["dashboard__history-container"]}>
-          <h3 className={classes["dashboard__history-title"]}>
-            {t("history")}
-          </h3>
-          <History transactions={globalState?.transactions as Transaction[]} />
-        </div>
+          <div className={classes["dashboard__history-container"]}>
+            <h3 className={classes["dashboard__history-title"]}>
+              {t("history")}
+            </h3>
+            <History
+              transactions={globalState?.transactions as Transaction[]}
+            />
+          </div>
 
-        <div className={classes["dashboard__transaction-container"]}>
-          <h3 className={classes["dashboard__transaction-title"]}>
-            {t("addNewTransaction")}
-          </h3>
-          <AddTransaction />
+          <div className={classes["dashboard__transaction-container"]}>
+            <h3 className={classes["dashboard__transaction-title"]}>
+              {t("addNewTransaction")}
+            </h3>
+            <AddTransaction />
         </div>
       </div>
     </div>

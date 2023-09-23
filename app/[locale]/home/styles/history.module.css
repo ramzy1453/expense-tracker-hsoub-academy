@@ -1,6 +1,6 @@
 .main-container {
   display: flex;
-  flex-direction: column;
+  margin: 10px 0;
 }
 
 .delete-button {
@@ -21,6 +21,8 @@
 .history-container {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 10px;
+  overflow-y: scroll;
+  height: 300px;
 }
 .history-item {
   border-bottom: 1px solid #0000001a;
@@ -28,9 +30,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 7px;
-  margin: 10px 0;
   cursor: pointer;
   transition: all 0.3s ease;
+  flex: 1;
 }
 
 .history-item:hover {

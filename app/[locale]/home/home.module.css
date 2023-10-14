@@ -1,13 +1,12 @@
 .dashboard-layout {
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
+  padding: 15px;
 }
 
 .dashboard-body {
   display: flex;
   flex-direction: column;
-  width: 50%;
   margin: 0 auto;
   padding: 0 100px;
 }
@@ -26,15 +25,16 @@
 .dashboard__balance-price {
 }
 
-.dashboard__history-container {
-}
-
 .dashboard__history-title {
   border-bottom: 1px solid #000;
   width: fit-content;
 }
 
 .dashboard__transaction-container {
+  margin: 0 30px;
+}
+.dashboard__history-container {
+  margin: 0 30px;
 }
 
 .dashboard__transaction-title {
@@ -72,4 +72,10 @@
   border-radius: 5px;
   outline: none;
   border: none;
+}
+
+.dashboard__history-transaction-container {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 30px;
 }

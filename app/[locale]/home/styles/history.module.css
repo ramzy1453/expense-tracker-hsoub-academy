@@ -4,17 +4,16 @@
 }
 
 .delete-button {
-  background-color: #f44e54;
+  background-color: #f32b32;
   border: none;
   cursor: pointer;
-  padding: 5px 10px;
   outline: none;
   color: white;
   transition: all 0.3s ease;
 }
 
 .delete-button:hover {
-  background-color: #fe2c55;
+  background-color: #f32b32e1;
   transform: scale(0.98);
 }
 
@@ -22,7 +21,7 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 10px;
   overflow-y: scroll;
-  max-height: 300px;
+  max-height: 400px;
 }
 .history-item {
   border-bottom: 1px solid #0000001a;

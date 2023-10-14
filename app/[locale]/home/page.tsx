@@ -77,6 +77,7 @@ export default function HomePage() {
           <IncomeExpense />
         </div>
 
+        <div className={classes["dashboard__history-transaction-container"]}>
           <div className={classes["dashboard__history-container"]}>
             <h3 className={classes["dashboard__history-title"]}>
               {t("history")}
@@ -91,6 +92,7 @@ export default function HomePage() {
               {t("addNewTransaction")}
             </h3>
             <AddTransaction />
+          </div>
         </div>
       </div>
     </div>
